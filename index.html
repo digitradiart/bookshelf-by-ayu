@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bookshelf by digitradiart</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="left-nav"><a href="#">Let's read!</a></div>
+            <div class="right-nav">
+                <!-- <input type="search" name="" id="search-box"> -->
+                <a href="#"><i class="fa fa-plus-circle plusIcon"></i> ADD</a>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container" align="center">
+        <!-- AddBookForm -->
+        <div class="addBookForm" id="addBookForm">
+            <form action="">
+                <h1>Add your book here:</h1>
+                <label for="title" class="label">Title</label>
+                <input type="text" id="booktitle" placeholder="Enter the book's title" name="Title" required>
+
+                <label for="author" class="label">Author</label>
+                <input type="text" id="bookauthor" placeholder="Enter the book's author" name="Author" required>
+
+                <label for="pages" class='label'>Pages</label>
+                <input type="number" id='bookpage' placeholder='Enter number of pages' name='Pages' required>
+
+                <label for="isRead" class='labels'>Have you read this book?</label>
+                <input type="checkbox" id='readCheckbox' name='isRead'>
+
+                <div class='submit' id='submitBtn'>Add book</div>
+                <div class='submit' id='exitBtn'>Exit</div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Card -->
+    <div id='container' class='container'>
+        <div style='display:none' class='card'>
+            <h5 class='cardText' id='title'>Title: </h5>
+            <h5 class='cardText' id='author'>Author: </h5>
+            <h5 class='cardText' id='pages'>Pages: </h5>
+            <h5 class='cardText' id='isRead'>Read: </h5>
+            <div id='readStatus' class='changeBtn btn'>Change Status</div>
+            <div id='deleteBtn' class='deleteBtn btn'>Delete</div>
+        </div>
+    </div>
+
+    <footer>
+        <div>
+            <a href="index.html" rel="noopener noreferrer"><i class="fa fa-heart" ></i> HOME</a>
+        </div>
+        <div>
+            <a href="pages/save.html" rel="noopener noreferrer"><i class="fa fa-bookmark"></i> SAVE</a>
+        </div>
+        <div>
+            <a href="pages/read.html" rel="noopener noreferrer"><i class="fa fa-book"></i> READ</a>
+        </div>
+    </footer>
+</body>
+
+</html>
