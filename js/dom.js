@@ -134,3 +134,16 @@ function refreshDataFromTodos() {
         }
     }
 }
+
+
+
+// var appearThis = document.getElementById('appearThis');
+
+// function appearOnClick() {
+
+//     if (appearThis.style.display === 'none') {
+//         appearThis.style.display = 'block';
+//     } else {
+//         appearThis.style.display = 'none';
+//     }
+// }

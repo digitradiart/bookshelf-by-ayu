@@ -45,7 +45,12 @@ img {
 
 body {
     font-family: 'Poppins', sans-serif;
-    background-color: rgb(107, 207, 194);
+    /* background-color: rgb(107, 207, 194); */
+    background-image: url('../assets/kimberly-farmer-lUaaKCUANVI-unsplash.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
     height: auto;
 }
 
@@ -79,7 +84,6 @@ nav {
 .container {
     margin: 5%;
     margin-top: 0;
-    /* padding: 10px; */
     min-height: 70vh;
     box-sizing: border-box;
     justify-content: center;
@@ -89,6 +93,13 @@ nav {
 a {
     color: white;
     text-decoration: none;
+}
+
+.plusIcon {
+    background-color: aquamarine;
+    border-radius: 5px;
+    padding: 5px;
+    cursor: pointer;
 }
 
 a .fa,
@@ -153,4 +164,8 @@ div .fa:active {
 .check-button:focus,
 .trash-button {
     outline: none;
+}
+
+.wrapper #appearThis {
+    display: none;
 }
