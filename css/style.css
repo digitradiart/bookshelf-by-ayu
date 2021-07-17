@@ -41,7 +41,7 @@ img {
 }
 
 
-/* Body */
+/* BODY */
 
 body {
     font-family: 'Poppins', sans-serif;
@@ -76,21 +76,14 @@ nav {
     top: 0;
 }
 
-
-/* .container {
-    margin: 10%;
-    min-height: fit-content;
-
-
-} */
-
 .container {
-    margin: 5% auto;
+    margin: 5%;
+    margin-top: 0;
+    /* padding: 10px; */
+    min-height: 70vh;
     box-sizing: border-box;
-    /* border: 1px solid black; */
-    display: flex;
-    /* background-color: grey; */
     justify-content: center;
+    background-color: aquamarine;
 }
 
 a {
@@ -110,55 +103,54 @@ div .fa:active {
 }
 
 
-/* addBook form styling */
+/* BUTTONS */
 
-.addBookForm {
-    width: 500px;
-    margin: 10px auto;
-    text-align: center;
-    border: 10px solid rgb(165, 156, 156);
-    padding: 10px;
-    border-radius: 5px;
-    /* display: none; */
-    background-color: rgba(151, 144, 144, 0.5);
-}
-
-input[type=text],
-select {
-    width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-}
-
-.submit {
-    width: 100%;
-    background-color: rgb(235, 43, 43);
-    color: white;
-    padding: 14px 20px;
-    margin: 8px 0;
-    border-width: 0.5px;
-    border-radius: 4px;
+.check-button {
+    background: url('../assets/check-outline.svg');
+    background-size: contain;
+    width: 40px;
+    height: 40px;
+    margin-left: auto;
     cursor: pointer;
+    border: none;
 }
 
-#bookpage {
-    display: block;
-    padding: 14px 20px;
-    width: 100%;
-    margin: 8px 0;
-    border-radius: 4px;
-    border-width: 0.5px;
+.check-button:hover {
+    background: url('../assets/check-solid.svg');
+    background-size: contain;
 }
 
-#bookpage::-moz-focus-outer {
+.trash-button {
+    background: url('../assets/trash-outline.svg');
+    background-size: contain;
+    width: 40px;
+    height: 40px;
+    margin-left: 16px;
+    cursor: pointer;
+    border: none;
+}
+
+.trash-button:hover {
+    background: url('../assets/trash-fill.svg');
+    background-size: contain;
+}
+
+.undo-button {
+    background: url('../assets/undo-ouline.svg');
+    background-size: contain;
+    width: 40px;
+    height: 40px;
+    margin-left: auto;
+    cursor: pointer;
+    border: none;
+}
+
+.undo-button:hover {
+    background: url('../assets/undo-ouline.svg');
+    background-size: contain;
+}
+
+.check-button:focus,
+.trash-button {
     outline: none;
-}
-
-#submitBtn {
-    display: block;
-    margin: 8px auto;
 }

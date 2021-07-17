@@ -21,38 +21,35 @@
         </nav>
     </header>
 
-    <div class="container" align="center">
-        <!-- AddBookForm -->
-        <div class="addBookForm" id="addBookForm">
-            <form action="">
-                <h1>Add your book here:</h1>
-                <label for="title" class="label">Title</label>
-                <input type="text" id="booktitle" placeholder="Enter the book's title" name="Title" required>
-
-                <label for="author" class="label">Author</label>
-                <input type="text" id="bookauthor" placeholder="Enter the book's author" name="Author" required>
-
-                <label for="pages" class='label'>Pages</label>
-                <input type="number" id='bookpage' placeholder='Enter number of pages' name='Pages' required>
-
-                <label for="isRead" class='labels'>Have you read this book?</label>
-                <input type="checkbox" id='readCheckbox' name='isRead'>
-
-                <div class='submit' id='submitBtn'>Add book</div>
-                <div class='submit' id='exitBtn'>Exit</div>
+    <h1 style="margin-top: 5%;" align="center">Add your book here!</h1>
+    <div class="wrapper" align="center" style="display: none;">
+        <div class="container bg-white shadow">
+            <h2 class="container-header text-center">Tambah yang harus dilakukan</h2>
+            <form class="form" action="#" id="form">
+                <div class="form-group form-title">
+                    <label for="title">Masukkan hal yang akan dilakukan</label>
+                    <input type="text" id="title" name="title" required>
+                </div>
+                <div class="form-group form-title">
+                    <label for="date">Masukkan tanggal harus selesai</label>
+                    <input type="date" id="date" name="date" required>
+                </div>
+                <input type="submit" value="Submit" name="Submit" class="btn-submit">
             </form>
         </div>
-    </div>
 
-    <!-- Card -->
-    <div id='container' class='container'>
-        <div style='display:none' class='card'>
-            <h5 class='cardText' id='title'>Title: </h5>
-            <h5 class='cardText' id='author'>Author: </h5>
-            <h5 class='cardText' id='pages'>Pages: </h5>
-            <h5 class='cardText' id='isRead'>Read: </h5>
-            <div id='readStatus' class='changeBtn btn'>Change Status</div>
-            <div id='deleteBtn' class='deleteBtn btn'>Delete</div>
+        <div class="container" style="display: none;">
+            <h2 class="container-header">Yang harus dilakukan</h2>
+            <div class="list-item" id="todos">
+
+            </div>
+        </div>
+
+        <div class="container" style="display: none;">
+            <h2 class="container-header">Yang sudah dilakukan</h2>
+            <div class="list-item" id="completed-todos">
+
+            </div>
         </div>
     </div>
 
@@ -67,6 +64,10 @@
             <a href="pages/read.html" rel="noopener noreferrer"><i class="fa fa-book"></i> READ</a>
         </div>
     </footer>
+
+    <script src="js/storage.js"></script>
+    <script src="js/dom.js"></script>
+    <script src="js/script.js"></script>
 </body>
 
 </html>

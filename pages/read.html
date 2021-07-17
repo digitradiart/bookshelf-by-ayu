@@ -13,17 +13,42 @@
 <body>
     <header>
         <nav>
-            <div class="left-nav"><a href="#">LOGO</a></div>
+            <div class="left-nav"><a href="#">READ</a></div>
             <div class="right-nav">
                 <!-- <input type="search" name="" id="search-box"> -->
                 <a href="#"><i class="fa fa-plus-circle"></i> ADD</a>
             </div>
         </nav>
     </header>
-    <div class="container" align="center">
 
-        <div class="content">
-            <h2>Read</h2>
+    <div class="wrapper" align="center">
+        <div class="container bg-white shadow" style="display: none;">
+            <h2 class="container-header text-center">Tambah yang harus dilakukan</h2>
+            <form class="form" action="#" id="form">
+                <div class="form-group form-title">
+                    <label for="title">Masukkan hal yang akan dilakukan</label>
+                    <input type="text" id="title" name="title" required>
+                </div>
+                <div class="form-group form-title">
+                    <label for="date">Masukkan tanggal harus selesai</label>
+                    <input type="date" id="date" name="date" required>
+                </div>
+                <input type="submit" value="Submit" name="Submit" class="btn-submit">
+            </form>
+        </div>
+
+        <div class="container" style="display: none;">
+            <h2 class="container-header">Yang harus dilakukan</h2>
+            <div class="list-item" id="todos">
+
+            </div>
+        </div>
+
+        <div class="container">
+            <h2 class="container-header">Yang sudah dilakukan</h2>
+            <div class="list-item" id="completed-todos">
+
+            </div>
         </div>
     </div>
 
@@ -38,6 +63,10 @@
             <a href="../pages/read.html" rel="noopener noreferrer"><i class="fa fa-book"></i> READ</a>
         </div>
     </footer>
+
+    <script src="../js/storage.js"></script>
+    <script src="../js/dom.js"></script>
+    <script src="../js/script.js"></script>
 </body>
 
 </html>
