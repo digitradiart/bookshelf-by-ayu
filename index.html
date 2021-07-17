@@ -15,22 +15,32 @@
         <nav>
             <div class="left-nav"><a href="#">Let's read!</a></div>
             <div class="right-nav">
-                <div class='plusIcon' id='plus'><i class="fa fa-plus-circle" aria-hidden="true"></i></i>ADD</div>
+                <div class='plusIcon' id='plus'><i class="fa fa-plus-circle" aria-hidden="true"></i></i>ADD BOOK</div>
             </div>
         </nav>
     </header>
 
-    <h1 style="margin-top: 5%;" align="center">Add your book here!</h1>
     <div class="wrapper" align="center">
         <div class="container" id="appearThis">
-            <h2 class="container-header">Tambah yang harus dilakukan</h2>
+            <h2 class="container-header">Add your books here!</h2>
             <form class="form" action="#" id="form">
                 <div class="form-group form-title">
-                    <label for="title">Masukkan hal yang akan dilakukan</label>
+                    <label for="title">Title</label>
                     <input type="text" id="title" name="title" required>
                 </div>
+
                 <div class="form-group form-title">
-                    <label for="date">Masukkan tanggal harus selesai</label>
+                    <label for="author">Author</label>
+                    <input type="text" id="author" name="author" required>
+                </div>
+
+                <div class="form-group form-title">
+                    <label for="pages">Pages</label>
+                    <input type="number" id="pages" name="pages" required>
+                </div>
+
+                <div class="form-group form-title">
+                    <label for="date">Date </label>
                     <input type="date" id="date" name="date" required>
                 </div>
                 <input type="submit" value="Submit" name="Submit" class="btn-submit">
@@ -41,16 +51,15 @@
         </div>
 
         <div class="container" style="display: none;">
-            <h2 class="container-header">Yang harus dilakukan</h2>
+            <h2 class="container-header">SAVE</h2>
             <div class="list-item" id="todos">
 
             </div>
         </div>
 
         <div class="container" style="display: none;">
-            <h2 class="container-header">Yang sudah dilakukan</h2>
+            <h2 class="container-header">READ</h2>
             <div class="list-item" id="completed-todos">
-
             </div>
         </div>
 
@@ -71,20 +80,7 @@
     <script src="js/storage.js"></script>
     <script src="js/dom.js"></script>
     <script src="js/script.js"></script>
-    <script>
-        let addNewBookBtn = document.getElementById('plus');
-        let exitFormBtn = document.getElementById('exitBtn');
 
-        function openForm() {
-            document.getElementById('appearThis').style.display = 'block';
-        }
-        addNewBookBtn.addEventListener('click', openForm);
-
-        function closeForm() {
-            document.getElementById('appearThis').style.display = 'none';
-        }
-        exitFormBtn.addEventListener('click', closeForm);
-    </script>
 </body>
 
 </html>

@@ -45,7 +45,6 @@ img {
 
 body {
     font-family: 'Poppins', sans-serif;
-    /* background-color: rgb(107, 207, 194); */
     background-image: url('../assets/kimberly-farmer-lUaaKCUANVI-unsplash.jpg');
     background-repeat: no-repeat;
     background-position: center;
@@ -82,12 +81,12 @@ nav {
 }
 
 .container {
-    margin: 5%;
-    margin-top: 0;
-    min-height: 70vh;
+    margin: 70px 20px;
+    min-height: 80vh;
     box-sizing: border-box;
     justify-content: center;
-    background-color: aquamarine;
+    background-color: rgba(75, 145, 148, 0.7);
+    border-radius: 5px;
 }
 
 a {
@@ -96,10 +95,10 @@ a {
 }
 
 .plusIcon {
-    background-color: aquamarine;
     border-radius: 5px;
     padding: 5px;
     cursor: pointer;
+    color: white;
 }
 
 a .fa,

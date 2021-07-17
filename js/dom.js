@@ -1,5 +1,5 @@
-const UNCOMPLETED_LIST_TODO_ID = "todos";
-const COMPLETED_LIST_TODO_ID = "completed-todos";
+const UNCOMPLETED_LIST = "todos";
+const COMPLETED_LIST = "completed-todos";
 const TODO_ITEMID = "itemId";
 
 function makeTodo(data /* string */ , timestamp /* string */ , isCompleted /* boolean */ ) {
@@ -61,7 +61,7 @@ function createButton(buttonTypeClass /* string */ , eventListener /* Event */ )
 }
 
 function addTodo() {
-    const uncompletedTODOList = document.getElementById(UNCOMPLETED_LIST_TODO_ID);
+    const uncompletedTODOList = document.getElementById(UNCOMPLETED_LIST);
     const textTodo = document.getElementById("title").value;
     const timestamp = document.getElementById("date").value;
 
@@ -76,7 +76,7 @@ function addTodo() {
 }
 
 function addTaskToCompleted(taskElement /* HTMLELement */ ) {
-    const listCompleted = document.getElementById(COMPLETED_LIST_TODO_ID);
+    const listCompleted = document.getElementById(COMPLETED_LIST);
     const taskTitle = taskElement.querySelector(".inner > h2").innerText;
     const taskTimestamp = taskElement.querySelector(".inner > p").innerText;
 
@@ -103,7 +103,7 @@ function removeTaskFromCompleted(taskElement /* HTMLELement */ ) {
 }
 
 function undoTaskFromCompleted(taskElement /* HTMLELement */ ) {
-    const listUncompleted = document.getElementById(UNCOMPLETED_LIST_TODO_ID);
+    const listUncompleted = document.getElementById(UNCOMPLETED_LIST);
     const taskTitle = taskElement.querySelector(".inner > h2").innerText;
     const taskTimestamp = taskElement.querySelector(".inner > p").innerText;
 
@@ -120,8 +120,8 @@ function undoTaskFromCompleted(taskElement /* HTMLELement */ ) {
 }
 
 function refreshDataFromTodos() {
-    const listUncompleted = document.getElementById(UNCOMPLETED_LIST_TODO_ID);
-    let listCompleted = document.getElementById(COMPLETED_LIST_TODO_ID);
+    const listUncompleted = document.getElementById(UNCOMPLETED_LIST);
+    let listCompleted = document.getElementById(COMPLETED_LIST);
 
     for (todo of todos) {
         const newTodo = makeTodo(todo.task, todo.timestamp, todo.isCompleted);
@@ -137,13 +137,16 @@ function refreshDataFromTodos() {
 
 
 
-// var appearThis = document.getElementById('appearThis');
 
-// function appearOnClick() {
+let addNewBookBtn = document.getElementById('plus');
+let exitFormBtn = document.getElementById('exitBtn');
 
-//     if (appearThis.style.display === 'none') {
-//         appearThis.style.display = 'block';
-//     } else {
-//         appearThis.style.display = 'none';
-//     }
-// }
+function openForm() {
+    document.getElementById('appearThis').style.display = 'block';
+}
+addNewBookBtn.addEventListener('click', openForm);
+
+function closeForm() {
+    document.getElementById('appearThis').style.display = 'none';
+}
+exitFormBtn.addEventListener('click', closeForm);

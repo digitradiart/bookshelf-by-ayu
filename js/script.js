@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 document.addEventListener("ondatasaved", () => {
-    console.log("Data berhasil di simpan.");
+    console.log("Data berhasil disimpan.");
 });
 
 document.addEventListener("ondataloaded", () => {
