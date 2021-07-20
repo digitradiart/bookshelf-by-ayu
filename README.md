@@ -6,3 +6,5 @@ Front-End Web Developer
   <li>Belajar Fundamental Front-End Web Development</li>
   <li>Menjadi Front-End Web Developer Expert</li>
 </ol>
+
+<p>Bookshelf App using Javascript and local storage</p>
