@@ -84,5 +84,6 @@ function findTodoIndex(todoId) {
 
         index++;
     }
+
     return -1;
 }

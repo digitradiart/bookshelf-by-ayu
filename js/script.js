@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     submitForm.addEventListener("submit", function(event) {
         event.preventDefault();
-        addTodo();
+        addBooks();
     });
 
     if (isStorageExist()) {
@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 document.addEventListener("ondatasaved", () => {
-    console.log("Data berhasil disimpan.");
+    console.log("Data berhasil di simpan.");
 });
 
 document.addEventListener("ondataloaded", () => {
