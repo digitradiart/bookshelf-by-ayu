@@ -190,7 +190,6 @@ function refreshDataFromTodos() {
     let listCompleted = document.getElementById(COMPLETED_LIST_BOOK_ID);
 
     for (todo of todos) {
-        // const newTodo = makeBooks(todo.task, todo.timestamp, todo.isCompleted);
         const newTodo = makeBooks(todo.isbn, todo.title, todo.author, todo.year, todo.date, todo.isCompleted);
 
 
