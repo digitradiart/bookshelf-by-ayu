@@ -35,7 +35,7 @@ nav button {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 60px;
+    padding: 30px 120px;
 }
 
 .wrapper .container {

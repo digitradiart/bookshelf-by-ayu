@@ -56,12 +56,24 @@ function updateDataToStorage() {
         saveData();
 }
 
-function composeTodoObject(task, timestamp, isCompleted) {
+// function composeTodoObject(task, timestamp, isCompleted) {
+//     return {
+//         id: +new Date(),
+//         task,
+//         timestamp,
+//         isCompleted
+//     };
+// }
+
+function composeTodoObject(isbn, title, author, year, date, isComplete) {
     return {
         id: +new Date(),
-        task,
-        timestamp,
-        isCompleted
+        isbn,
+        title,
+        author,
+        year,
+        date,
+        isComplete
     };
 }
 

@@ -77,6 +77,7 @@ function addTodo() {
 
 function addTaskToCompleted(taskElement /* HTMLELement */ ) {
     const listCompleted = document.getElementById(COMPLETED_LIST_TODO_ID);
+
     const taskTitle = taskElement.querySelector(".inner > h2").innerText;
     const taskTimestamp = taskElement.querySelector(".inner > p").innerText;
 
@@ -104,6 +105,7 @@ function removeTaskFromCompleted(taskElement /* HTMLELement */ ) {
 
 function undoTaskFromCompleted(taskElement /* HTMLELement */ ) {
     const listUncompleted = document.getElementById(UNCOMPLETED_LIST_TODO_ID);
+
     const taskTitle = taskElement.querySelector(".inner > h2").innerText;
     const taskTimestamp = taskElement.querySelector(".inner > p").innerText;
 
@@ -119,6 +121,7 @@ function undoTaskFromCompleted(taskElement /* HTMLELement */ ) {
     updateDataToStorage();
 }
 
+// refresh data form Todos
 function refreshDataFromTodos() {
     const listUncompleted = document.getElementById(UNCOMPLETED_LIST_TODO_ID);
     let listCompleted = document.getElementById(COMPLETED_LIST_TODO_ID);
