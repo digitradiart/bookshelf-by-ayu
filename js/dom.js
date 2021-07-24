@@ -42,6 +42,7 @@ function makeBooks(inputISBN, inputTitle, inputAuthor, inputDate, isCompleted) {
             createTrashButton()
         );
     } else {
+        alert('Selamat, kamu telah menambahkan 1 buku.');
         container.append(
             createCheckButton()
         );
@@ -96,6 +97,7 @@ function createButton(buttonTypeClass, eventListener) {
 }
 
 function addBooks() {
+
     const uncompletedBOOKList = document.getElementById(UNCOMPLETED_LIST_BOOK_ID);
 
     const inputISBN = document.getElementById("isbn").value;
@@ -115,13 +117,14 @@ function addBooks() {
 
 
 function addTaskToCompleted(taskElement) {
+    confirm('Have you read your book?');
+
     const listCompleted = document.getElementById(COMPLETED_LIST_BOOK_ID);
 
     const taskISBN = taskElement.querySelector(".inner > h1").innerText;
     const taskTitle = taskElement.querySelector(".inner > h2").innerText;
     const taskAuthor = taskElement.querySelector(".inner > h3").innerText;
     const taskDate = taskElement.querySelector(".inner > p").innerText;
-
 
     const newTodo = makeBooks(taskISBN, taskTitle, taskAuthor, taskDate, true);
 
@@ -136,6 +139,7 @@ function addTaskToCompleted(taskElement) {
 }
 
 function removeTaskFromCompleted(taskElement) {
+    confirm('Do you want to delete your book?');
 
     const todoPosition = findTodoIndex(taskElement[TODO_ITEMID]);
     todos.splice(todoPosition, 1);
@@ -145,6 +149,7 @@ function removeTaskFromCompleted(taskElement) {
 }
 
 function undoTaskFromCompleted(taskElement) {
+    confirm('Do you want to move your book?');
     const listUncompleted = document.getElementById(UNCOMPLETED_LIST_BOOK_ID);
 
     const taskISBN = taskElement.querySelector(".inner > h1").innerText;
