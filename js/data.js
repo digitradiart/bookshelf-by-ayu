@@ -65,13 +65,12 @@ function updateDataToStorage() {
 //     };
 // }
 
-function composeTodoObject(isbn, title, author, year, date, isCompleted) {
+function composeTodoObject(isbn, title, author, date, isCompleted) {
     return {
         id: +new Date(),
         isbn,
         title,
         author,
-        year,
         date,
         isCompleted
     };

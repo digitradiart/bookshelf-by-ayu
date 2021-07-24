@@ -3,7 +3,6 @@
     isbn: number,
     title: string,
     author: string,
-    year: number,
     date: date,
     isCompleted: boolean,
   }
@@ -14,7 +13,7 @@ const COMPLETED_LIST_BOOK_ID = "readBooks";
 const TODO_ITEMID = "itemId";
 
 // Menampilkan Item Buku dan Menandai Buku Selesai
-function makeBooks(inputISBN, inputTitle, inputAuthor, inputYear, inputDate, isCompleted) {
+function makeBooks(inputISBN, inputTitle, inputAuthor, inputDate, isCompleted) {
 
     const textInputISBN = document.createElement("h1");
     textInputISBN.innerText = `${inputISBN}`;
@@ -25,15 +24,12 @@ function makeBooks(inputISBN, inputTitle, inputAuthor, inputYear, inputDate, isC
     const textInputAuthor = document.createElement("h3");
     textInputAuthor.innerText = `${inputAuthor}`;
 
-    const textInputYear = document.createElement("h4");
-    textInputYear.innerText = `${inputYear}`;
-
     const textInputDate = document.createElement("p");
     textInputDate.innerText = `${inputDate}`;
 
     const textContainer = document.createElement("div");
     textContainer.classList.add("inner")
-    textContainer.append(textInputISBN, textInputTitle, textInputAuthor, textInputYear, textInputDate);
+    textContainer.append(textInputISBN, textInputTitle, textInputAuthor, textInputDate);
 
 
     const container = document.createElement("div");
@@ -105,11 +101,10 @@ function addBooks() {
     const inputISBN = document.getElementById("isbn").value;
     const inputTitle = document.getElementById("title").value;
     const inputAuthor = document.getElementById("author").value;
-    const inputYear = document.getElementById("year").value;
     const inputDate = document.getElementById("date").value;
 
-    const todo = makeBooks(inputISBN, inputTitle, inputAuthor, inputYear, inputDate, false);
-    const todoObject = composeTodoObject(inputISBN, inputTitle, inputAuthor, inputYear, inputDate, false);
+    const todo = makeBooks(inputISBN, inputTitle, inputAuthor, inputDate, false);
+    const todoObject = composeTodoObject(inputISBN, inputTitle, inputAuthor, inputDate, false);
 
     todo[TODO_ITEMID] = todoObject.id;
     todos.push(todoObject);
@@ -125,11 +120,10 @@ function addTaskToCompleted(taskElement) {
     const taskISBN = taskElement.querySelector(".inner > h1").innerText;
     const taskTitle = taskElement.querySelector(".inner > h2").innerText;
     const taskAuthor = taskElement.querySelector(".inner > h3").innerText;
-    const taskYear = taskElement.querySelector(".inner > h4").innerText;
     const taskDate = taskElement.querySelector(".inner > p").innerText;
 
 
-    const newTodo = makeBooks(taskISBN, taskTitle, taskAuthor, taskYear, taskDate, true);
+    const newTodo = makeBooks(taskISBN, taskTitle, taskAuthor, taskDate, true);
 
     const todo = findTodo(taskElement[TODO_ITEMID]);
     todo.isCompleted = true;
@@ -156,11 +150,10 @@ function undoTaskFromCompleted(taskElement) {
     const taskISBN = taskElement.querySelector(".inner > h1").innerText;
     const taskTitle = taskElement.querySelector(".inner > h2").innerText;
     const taskAuthor = taskElement.querySelector(".inner > h3").innerText;
-    const taskYear = taskElement.querySelector(".inner > h4").innerText;
     const taskDate = taskElement.querySelector(".inner > p").innerText;
 
 
-    const newTodo = makeBooks(taskISBN, taskTitle, taskAuthor, taskYear, taskDate, false);
+    const newTodo = makeBooks(taskISBN, taskTitle, taskAuthor, taskDate, false);
 
     const todo = findTodo(taskElement[TODO_ITEMID]);
     todo.isCompleted = false;
@@ -185,7 +178,7 @@ function refreshDataFromTodos() {
     let listCompleted = document.getElementById(COMPLETED_LIST_BOOK_ID);
 
     for (todo of todos) {
-        const newTodo = makeBooks(todo.isbn, todo.title, todo.author, todo.year, todo.date, todo.isCompleted);
+        const newTodo = makeBooks(todo.isbn, todo.title, todo.author, todo.date, todo.isCompleted);
 
 
         newTodo[TODO_ITEMID] = todo.id;
@@ -197,3 +190,17 @@ function refreshDataFromTodos() {
         }
     }
 }
+
+// MODAL OPEN
+let addNewBookBtn = document.querySelector('.plusBtn');
+let exitFormBtn = document.querySelector('.exitBtn');
+
+function openForm() {
+    document.querySelector('.appearThis').style.display = 'block';
+}
+addNewBookBtn.addEventListener('click', openForm);
+
+function closeForm() {
+    document.querySelector('.appearThis').style.display = 'none';
+}
+exitFormBtn.addEventListener('click', closeForm);

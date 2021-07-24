@@ -24,10 +24,9 @@
                 id: string | number,
                 title: string,
                 author: string,
-                year: number,
                 isComplete: boolean,
               } -->
-            <form class="form" action="#" id="form">
+            <form class="form appearThis" action="#" id="form">
                 <div class="form-group form-title">
                     <label for="isbn">ISBN</label>
                     <input type="number" id="isbn" name="isbn" required>
@@ -43,10 +42,7 @@
                     <input type="text" id="author" name="author" required>
                 </div>
 
-                <div class="form-group form-title">
-                    <label for="year">Book's Year</label>
-                    <input type="number" id="year" name="year" required>
-                </div>
+
 
                 <div class="form-group form-title">
                     <label for="date">Date</label>
@@ -60,6 +56,8 @@
 
 
                 <input type="submit" value="Submit" name="Submit" class="btn-submit">
+                <input type='submit' value="Exit" name="Exit" class='exitBtn'>
+
             </form>
         </div>
 
@@ -72,7 +70,6 @@
                         <th>ISBN</th>
                         <th>Title</th>
                         <th>Author</th>
-                        <th>Year</th>
                         <th>Date</th>
                         <th>Status</th>
                     </tr>
@@ -90,7 +87,6 @@
                         <th>ISBN</th>
                         <th>Title</th>
                         <th>Author</th>
-                        <th>Year</th>
                         <th>Date</th>
                         <th>Status</th>
                     </tr>
