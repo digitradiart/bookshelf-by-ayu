@@ -115,7 +115,7 @@ th {
 
 .form-group label {
     margin-bottom: 4px;
-    font-size: 1.5em;
+    font-size: 1.25em;
     font-weight: lighter;
 }
 
@@ -133,7 +133,7 @@ input[type=date] {
     padding: 16px;
     box-sizing: border-box;
     margin-bottom: 30px;
-    font-size: 1.25em;
+    font-size: 1em;
 }
 
 .exitBtn,
@@ -145,7 +145,7 @@ input[type=date] {
     padding: 12px 24px;
     border: 2px solid #5F30E2;
     color: black;
-    font-size: 1.25em;
+    font-size: 1em;
     margin-top: auto;
     align-self: flex-end;
     cursor: pointer;
