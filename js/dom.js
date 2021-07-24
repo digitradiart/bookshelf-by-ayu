@@ -36,6 +36,7 @@ function makeBooks(inputISBN, inputTitle, inputAuthor, inputDate, isCompleted) {
     container.classList.add("item", "shadow");
     container.append(textContainer);
 
+
     if (isCompleted) {
         container.append(
             createUndoButton(),
@@ -220,3 +221,12 @@ function closeForm() {
     }
 }
 exitFormBtn.addEventListener('click', closeForm);
+
+
+// MENGHAPUS BIDANG INPUT
+function eraseText() {
+    document.getElementById("isbn").value = "";
+    document.getElementById("title").value = "";
+    document.getElementById("author").value = "";
+    document.getElementById("date").value = "";
+}
