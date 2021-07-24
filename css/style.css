@@ -60,12 +60,20 @@ nav button {
     line-height: 1.5em;
 }
 
-.item>.inner h2 {
-    margin-bottom: unset;
+.inner {
+    display: flex;
+    flex-direction: row;
 }
 
+.item>.inner h1,
+.item>.inner h2,
+.item>.inner h3,
+.item>.inner h4,
 .item>.inner p {
     margin-top: 5px;
+    justify-content: space-evenly;
+    border: 1px solid;
+    width: 100%;
 }
 
 .form {

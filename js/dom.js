@@ -17,23 +17,18 @@ const TODO_ITEMID = "itemId";
 function makeBooks(inputISBN, inputTitle, inputAuthor, inputYear, inputDate, isCompleted) {
 
     const textInputISBN = document.createElement("h1");
-    // textInputISBN.innerText = `ISBN: ${inputISBN}`;
     textInputISBN.innerText = `${inputISBN}`;
 
     const textInputTitle = document.createElement("h2");
-    // textInputTitle.innerText = `Title: ${inputTitle}`;
     textInputTitle.innerText = `${inputTitle}`;
 
     const textInputAuthor = document.createElement("h3");
-    // textInputAuthor.innerText = `Author: ${inputAuthor}`;
     textInputAuthor.innerText = `${inputAuthor}`;
 
     const textInputYear = document.createElement("h4");
-    // textInputYear.innerText = `Book's Year: ${inputYear}`;
     textInputYear.innerText = `${inputYear}`;
 
     const textInputDate = document.createElement("p");
-    // textInputDate.innerText = `Date: ${inputDate}`;
     textInputDate.innerText = `${inputDate}`;
 
     const textContainer = document.createElement("div");
