@@ -14,8 +14,6 @@ body {
 
 nav {
     height: 50px;
-    background: #5F30E2;
-    color: white;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -54,7 +52,6 @@ nav button {
     border-radius: 16px;
     margin-top: 20px;
     padding: 12px 24px;
-    background: #F5F1FF;
     display: flex;
     align-items: center;
     font-weight: bold;
@@ -71,8 +68,6 @@ tr {
     justify-content: space-between;
     display: flex;
     padding: 10px;
-    background-color: #5F30E2;
-    color: #F5F1FF;
     font-weight: bold;
 }
 
@@ -119,16 +114,10 @@ th {
     font-weight: lighter;
 }
 
-.shadow {
-    box-shadow: 0 5px 10px rgba(85, 95, 143, 0.05), 0 15px 40px rgba(23, 51, 163, 0.2);
-}
-
 input[type=number],
 input[type=text],
 input[type=date] {
     font-family: Raleway;
-    background: #F5F1FF;
-    border: 2px solid #9475EA;
     border-radius: 8px;
     padding: 16px;
     box-sizing: border-box;
@@ -143,17 +132,10 @@ input[type=date] {
     font-family: Raleway;
     border-radius: 16px;
     padding: 12px 24px;
-    border: 2px solid #5F30E2;
-    color: black;
     font-size: 1em;
     margin-top: auto;
     align-self: flex-end;
     cursor: pointer;
-}
-
-.btn-submit:hover {
-    background: #5F30E2;
-    color: #F5F1FF;
 }
 
 .text-center {

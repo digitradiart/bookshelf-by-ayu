@@ -6,15 +6,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bookshelf by Ayu</title>
+    <link rel="stylesheet" href="css/light.css" id="theme-link">
     <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
 </head>
 
 <body>
     <nav>
-
         <div class="logo flex-item">Let's read!</div>
-        <div class="plusBtn flex-item"><button>+</button></div>
-
+        <div class="float-right" style="display: inline-block;">
+            <button><span class="plusBtn flex-item">+</span></button>
+            <button><span class="material-icons md-48" id="btn-toggle">brightness_4</span></button>
+        </div>
     </nav>
 
     <div class="wrapper">
@@ -62,7 +65,7 @@
                         <th>ISBN</th>
                         <th>Title</th>
                         <th>Author</th>
-                        <th>Date</th>
+                        <th>Deadline</th>
                         <th>Status</th>
                     </tr>
                 </table>
@@ -79,7 +82,7 @@
                         <th>ISBN</th>
                         <th>Title</th>
                         <th>Author</th>
-                        <th>Date</th>
+                        <th>Deadline</th>
                         <th>Status</th>
                     </tr>
                 </table>
@@ -100,6 +103,7 @@
     <script src="js/data.js"></script>
     <script src="js/dom.js"></script>
     <script src="js/script.js"></script>
+    <script src="js/toggle.js"></script>
 </body>
 
 </html>

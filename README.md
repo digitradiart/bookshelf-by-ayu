@@ -7,4 +7,12 @@ Front-End Web Developer
   <li>Menjadi Front-End Web Developer Expert</li>
 </ol>
 
-<p>Bookshelf App using Javascript and local storage</p>
+<p>
+  <h2>Bookshelf App using Javascript</h2>
+  Features:
+  <li>Submit, undo, delete</li>
+  <li>Local storage</li>
+  <li>Modal</li>
+  <li>Delete text on input after Submit/Exit</li>
+  <li>Dark/Light mode</li>
+</p>

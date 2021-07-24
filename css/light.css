@@ -1,0 +1,30 @@
+nav,
+tr,
+.btn-submit:hover {
+    background: #5F30E2;
+    color: #F5F1FF;
+}
+
+body,
+.item {
+    background-image: linear-gradient(50deg, #F5F1FF, rgb(226, 198, 231));
+    color: black;
+}
+
+input[type=number],
+input[type=text],
+input[type=date] {
+    border: 2px solid #9475EA;
+}
+
+.exitBtn,
+.btn-submit {
+    border: 2px solid #9475EA;
+    background: #5F30E2;
+    color: white;
+    font-weight: bold;
+}
+
+.shadow {
+    box-shadow: 0 5px 10px rgba(85, 95, 143, 0.05), 0 15px 40px rgba(23, 51, 163, 0.2);
+}
