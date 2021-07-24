@@ -42,7 +42,6 @@ function makeBooks(inputISBN, inputTitle, inputAuthor, inputDate, isCompleted) {
             createTrashButton()
         );
     } else {
-        alert('Selamat, kamu telah menambahkan 1 buku.');
         container.append(
             createCheckButton()
         );
@@ -97,7 +96,6 @@ function createButton(buttonTypeClass, eventListener) {
 }
 
 function addBooks() {
-
     const uncompletedBOOKList = document.getElementById(UNCOMPLETED_LIST_BOOK_ID);
 
     const inputISBN = document.getElementById("isbn").value;
@@ -117,58 +115,66 @@ function addBooks() {
 
 
 function addTaskToCompleted(taskElement) {
-    confirm('Have you read your book?');
+    let confirmation = confirm('Have you read your book?');
+    if (confirmation == true) {
+        const listCompleted = document.getElementById(COMPLETED_LIST_BOOK_ID);
 
-    const listCompleted = document.getElementById(COMPLETED_LIST_BOOK_ID);
+        const taskISBN = taskElement.querySelector(".inner > h1").innerText;
+        const taskTitle = taskElement.querySelector(".inner > h2").innerText;
+        const taskAuthor = taskElement.querySelector(".inner > h3").innerText;
+        const taskDate = taskElement.querySelector(".inner > p").innerText;
 
-    const taskISBN = taskElement.querySelector(".inner > h1").innerText;
-    const taskTitle = taskElement.querySelector(".inner > h2").innerText;
-    const taskAuthor = taskElement.querySelector(".inner > h3").innerText;
-    const taskDate = taskElement.querySelector(".inner > p").innerText;
+        const newTodo = makeBooks(taskISBN, taskTitle, taskAuthor, taskDate, true);
 
-    const newTodo = makeBooks(taskISBN, taskTitle, taskAuthor, taskDate, true);
+        const todo = findTodo(taskElement[TODO_ITEMID]);
+        todo.isCompleted = true;
+        newTodo[TODO_ITEMID] = todo.id;
 
-    const todo = findTodo(taskElement[TODO_ITEMID]);
-    todo.isCompleted = true;
-    newTodo[TODO_ITEMID] = todo.id;
+        listCompleted.append(newTodo);
+        taskElement.remove();
 
-    listCompleted.append(newTodo);
-    taskElement.remove();
-
-    updateDataToStorage();
+        updateDataToStorage();
+    } else {
+        return 0;
+    }
 }
 
 function removeTaskFromCompleted(taskElement) {
-    confirm('Do you want to delete your book?');
+    let confirmation = confirm('Do you want to delete your book?');
+    if (confirmation == true) {
+        const todoPosition = findTodoIndex(taskElement[TODO_ITEMID]);
+        todos.splice(todoPosition, 1);
 
-    const todoPosition = findTodoIndex(taskElement[TODO_ITEMID]);
-    todos.splice(todoPosition, 1);
-
-    taskElement.remove();
-    updateDataToStorage();
+        taskElement.remove();
+        updateDataToStorage();
+    } else {
+        return 0;
+    }
 }
 
 function undoTaskFromCompleted(taskElement) {
-    confirm('Do you want to move your book?');
-    const listUncompleted = document.getElementById(UNCOMPLETED_LIST_BOOK_ID);
+    let confirmation = confirm('Do you want to move your book?');
 
-    const taskISBN = taskElement.querySelector(".inner > h1").innerText;
-    const taskTitle = taskElement.querySelector(".inner > h2").innerText;
-    const taskAuthor = taskElement.querySelector(".inner > h3").innerText;
-    const taskDate = taskElement.querySelector(".inner > p").innerText;
+    if (confirmation == true) {
+        const listUncompleted = document.getElementById(UNCOMPLETED_LIST_BOOK_ID);
 
+        const taskISBN = taskElement.querySelector(".inner > h1").innerText;
+        const taskTitle = taskElement.querySelector(".inner > h2").innerText;
+        const taskAuthor = taskElement.querySelector(".inner > h3").innerText;
+        const taskDate = taskElement.querySelector(".inner > p").innerText;
 
-    const newTodo = makeBooks(taskISBN, taskTitle, taskAuthor, taskDate, false);
+        const newTodo = makeBooks(taskISBN, taskTitle, taskAuthor, taskDate, false);
+        const todo = findTodo(taskElement[TODO_ITEMID]);
+        todo.isCompleted = false;
+        newTodo[TODO_ITEMID] = todo.id;
 
-    const todo = findTodo(taskElement[TODO_ITEMID]);
-    todo.isCompleted = false;
-    newTodo[TODO_ITEMID] = todo.id;
+        listUncompleted.append(newTodo);
+        taskElement.remove();
 
-    listUncompleted.append(newTodo);
-    taskElement.remove();
-
-    updateDataToStorage();
-
+        updateDataToStorage();
+    } else {
+        return 0;
+    }
 }
 
 
@@ -206,6 +212,11 @@ function openForm() {
 addNewBookBtn.addEventListener('click', openForm);
 
 function closeForm() {
-    document.querySelector('.appearThis').style.display = 'none';
+    let confirmation = confirm('would you like to close?');
+    if (confirmation == true) {
+        document.querySelector('.appearThis').style.display = 'none';
+    } else {
+        return 0;
+    }
 }
 exitFormBtn.addEventListener('click', closeForm);
