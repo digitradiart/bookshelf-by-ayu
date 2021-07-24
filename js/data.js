@@ -65,7 +65,7 @@ function updateDataToStorage() {
 //     };
 // }
 
-function composeTodoObject(isbn, title, author, year, date, isComplete) {
+function composeTodoObject(isbn, title, author, year, date, isCompleted) {
     return {
         id: +new Date(),
         isbn,
@@ -73,7 +73,7 @@ function composeTodoObject(isbn, title, author, year, date, isComplete) {
         author,
         year,
         date,
-        isComplete
+        isCompleted
     };
 }
 

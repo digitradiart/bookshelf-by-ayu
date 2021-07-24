@@ -94,7 +94,7 @@ function createCheckButton() {
     });
 }
 
-function createButton(buttonTypeClass /* string */ , eventListener /* Event */ ) {
+function createButton(buttonTypeClass, eventListener) {
     const button = document.createElement("button");
     button.classList.add(buttonTypeClass);
     button.addEventListener("click", function(event) {
@@ -146,7 +146,7 @@ function addTaskToCompleted(taskElement) {
     updateDataToStorage();
 }
 
-function removeTaskFromCompleted(taskElement /* HTMLELement */ ) {
+function removeTaskFromCompleted(taskElement) {
 
     const todoPosition = findTodoIndex(taskElement[TODO_ITEMID]);
     todos.splice(todoPosition, 1);
