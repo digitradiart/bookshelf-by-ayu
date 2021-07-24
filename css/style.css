@@ -156,13 +156,6 @@ input[type=date] {
     color: #F5F1FF;
 }
 
-input[type=number],
-input[type=text],
-input[type=date],
-.btn-submit:focus {
-    outline: none;
-}
-
 .text-center {
     text-align: center;
 }
@@ -220,8 +213,12 @@ input[type=date],
     height: 40px;
 }
 
-.check-button:focus,
-.trash-button {
+.trash-button,
+input[type=number],
+input[type=text],
+input[type=date],
+.btn-submit,
+.check-button {
     outline: none;
 }
 
