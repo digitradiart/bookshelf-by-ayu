@@ -60,6 +60,7 @@ nav button {
 }
 
 table {
+    table-layout: fixed;
     width: 100%;
 }
 
@@ -70,10 +71,12 @@ tr {
     display: flex;
     padding: 10px;
     font-weight: bold;
+    overflow: hidden;
 }
 
 th {
     justify-content: space-evenly;
+    overflow: hidden;
     align-items: center;
 }
 
@@ -91,7 +94,6 @@ th {
 .item>.inner p {
     margin: 5px;
     justify-content: space-evenly;
-    /* border: 1px solid; */
     width: 100%;
     font-size: 1em;
 }
@@ -123,16 +125,17 @@ input[type=date] {
     box-sizing: border-box;
     margin-bottom: 30px;
     font-size: 1em;
+    width: 100%;
 }
 
 .exitBtn,
 .btn-submit {
-    width: fit-content;
+    width: 100%;
     border: none;
     border-radius: 16px;
     padding: 12px 24px;
     font-size: 1em;
-    margin-top: auto;
+    margin-top: 20px;
     align-self: flex-end;
     cursor: pointer;
 }
@@ -212,7 +215,7 @@ footer {
     font-size: 0.9em;
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 600px) {
     .wrapper {
         margin-top: 60px;
         padding: 20px;
@@ -226,5 +229,21 @@ footer {
     .undo-button {
         margin: 0;
         padding: 0;
+    }
+    table {
+        table-layout: fixed;
+        width: 100%;
+    }
+    tr {
+        margin-top: 20px;
+        padding: 5px;
+    }
+    .inner {
+        font-size: 0.9em;
+        /* border: 1px solid red; */
+        padding: 0;
+        margin: 0;
+        overflow: scroll;
+        align-items: center;
     }
 }
