@@ -12,24 +12,6 @@ const UNCOMPLETED_LIST_BOOK_ID = "unreadBooks";
 const COMPLETED_LIST_BOOK_ID = "readBooks";
 const TODO_ITEMID = "itemId";
 
-function addBooks() {
-    const uncompletedBOOKList = document.getElementById(UNCOMPLETED_LIST_BOOK_ID);
-
-    const inputISBN = document.getElementById("isbn").value;
-    const inputTitle = document.getElementById("title").value;
-    const inputAuthor = document.getElementById("author").value;
-    const inputDate = document.getElementById("date").value;
-
-    const todo = makeBooks(inputISBN, inputTitle, inputAuthor, inputDate, false);
-    const todoObject = composeTodoObject(inputISBN, inputTitle, inputAuthor, inputDate, false);
-
-    todo[TODO_ITEMID] = todoObject.id;
-    todos.push(todoObject);
-
-    uncompletedBOOKList.append(todo);
-    updateDataToStorage();
-}
-
 // Menampilkan Item Buku dan Menandai Buku Selesai
 function makeBooks(inputISBN, inputTitle, inputAuthor, inputDate, isCompleted) {
 
@@ -54,6 +36,7 @@ function makeBooks(inputISBN, inputTitle, inputAuthor, inputDate, isCompleted) {
     container.classList.add("item", "shadow");
     container.append(textContainer);
 
+
     if (isCompleted) {
         container.append(
             createUndoButton(),
@@ -61,8 +44,7 @@ function makeBooks(inputISBN, inputTitle, inputAuthor, inputDate, isCompleted) {
         );
     } else {
         container.append(
-            createCheckButton(),
-            createTrashButton()
+            createCheckButton()
         );
     }
     return container;
@@ -86,6 +68,24 @@ Buku yang ditampilkan pada rak baik itu "Belum selesai dibaca" maupun "Selesai d
 */
 
 // createButton
+function createUndoButton() {
+    return createButton("undo-button", function(event) {
+        undoTaskFromCompleted(event.target.parentElement);
+    });
+}
+
+function createTrashButton() {
+    return createButton("trash-button", function(event) {
+        removeTaskFromCompleted(event.target.parentElement);
+    });
+}
+
+function createCheckButton() {
+    return createButton("check-button", function(event) {
+        addTaskToCompleted(event.target.parentElement);
+    });
+}
+
 function createButton(buttonTypeClass, eventListener) {
     const button = document.createElement("button");
     button.classList.add(buttonTypeClass);
@@ -96,11 +96,24 @@ function createButton(buttonTypeClass, eventListener) {
     return button;
 }
 
-function createCheckButton() {
-    return createButton("check-button", function(event) {
-        addTaskToCompleted(event.target.parentElement);
-    });
+function addBooks() {
+    const uncompletedBOOKList = document.getElementById(UNCOMPLETED_LIST_BOOK_ID);
+
+    const inputISBN = document.getElementById("isbn").value;
+    const inputTitle = document.getElementById("title").value;
+    const inputAuthor = document.getElementById("author").value;
+    const inputDate = document.getElementById("date").value;
+
+    const todo = makeBooks(inputISBN, inputTitle, inputAuthor, inputDate, false);
+    const todoObject = composeTodoObject(inputISBN, inputTitle, inputAuthor, inputDate, false);
+
+    todo[TODO_ITEMID] = todoObject.id;
+    todos.push(todoObject);
+
+    uncompletedBOOKList.append(todo);
+    updateDataToStorage();
 }
+
 
 function addTaskToCompleted(taskElement) {
     let confirmation = confirm('Have you read your book?');
@@ -127,7 +140,6 @@ function addTaskToCompleted(taskElement) {
     }
 }
 
-
 function removeTaskFromCompleted(taskElement) {
     let confirmation = confirm('Do you want to delete your book?');
     if (confirmation == true) {
@@ -139,12 +151,6 @@ function removeTaskFromCompleted(taskElement) {
     } else {
         return 0;
     }
-}
-
-function createTrashButton() {
-    return createButton("trash-button", function(event) {
-        removeTaskFromCompleted(event.target.parentElement);
-    });
 }
 
 function undoTaskFromCompleted(taskElement) {
@@ -170,12 +176,6 @@ function undoTaskFromCompleted(taskElement) {
     } else {
         return 0;
     }
-}
-
-function createUndoButton() {
-    return createButton("undo-button", function(event) {
-        undoTaskFromCompleted(event.target.parentElement);
-    });
 }
 
 
