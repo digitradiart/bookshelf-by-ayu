@@ -59,11 +59,14 @@ function makeBooks(inputISBN, inputTitle, inputAuthor, inputDate, isCompleted) {
             createUndoButton(),
             createTrashButton()
         );
+        document.getElementById("form").reset();
     } else {
         container.append(
             createCheckButton(),
             createTrashButton()
         );
+
+        document.getElementById("form").reset();
     }
     return container;
 }
@@ -221,12 +224,3 @@ function closeForm() {
     }
 }
 exitFormBtn.addEventListener('click', closeForm);
-
-
-// MENGHAPUS BIDANG INPUT
-function eraseText() {
-    document.getElementById("isbn").value = "";
-    document.getElementById("title").value = "";
-    document.getElementById("author").value = "";
-    document.getElementById("date").value = "";
-}
